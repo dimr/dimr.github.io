@@ -1,43 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>dmtrs</title><link href="/" rel="alternate"></link><link href="/feeds/post.atom.xml" rel="self"></link><id>/</id><updated>2016-05-18T04:47:56+03:00</updated><entry><title>Debian snapshot repository cli tool</title><link href="/debsnap-cli.html" rel="alternate"></link><published>2016-05-18T04:47:56+03:00</published><author><name>dimitris</name></author><id>tag:,2016-05-18:debsnap-cli.html</id><summary type="html">&lt;p&gt;&lt;a href="http://snapshot.debian.org/"&gt;Debian snapshot repository&lt;/a&gt; is&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;is a wayback machine that allows access to old packages based on dates and version numbers. It consists of all past and current packages the Debian archive provides.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;As a tarting point for creating this package was that some times xserver transitions were not compatible with the current nvidia proprietary driver, so
-when you were upgrading the xserver you had to switch to the nouveau driver. The result was black screen and you either, had to edit xorg.conf and choose
-the open source driver or downgrade the nvidi-driver. Since i prefer to use the second one i had to downgrade but there where times that it was
-removed from the official repository. This is where the debian snapshot repository comes in handy but in a situation like this with no gui environment
-you have to go to another computer, search the package, copy the timestamp that your package was first seen in the repository and manually write
-the url to your sources.list file, plus write down how you should update your package cache and ignore the Valid-Until header within the Release files.
-So, you need to write some like this&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;deb http://snapshot.debian.org/archive/debian/20131221T035435Z unstable main contrib non-free&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;and then update the package cache either with apt-get&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;apt-get -o Acquire::Check-Valid-Until=false update&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;or with aptitude&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;aptitude -o Acquire::Check-Valid-Until=false update&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;The first thing that came in mind was that i should search for a program that does all this work for me. To my suprise &lt;strong&gt;there is no such thing&lt;/strong&gt;.
-The closest you can find that interacts with the snapshot server is a program called debsnap that you can find it in the &lt;a href="https://packages.debian.org/sid/devscripts"&gt;devscripts&lt;/a&gt; package&lt;/p&gt;
-&lt;p&gt;All these happened while using the debian testing branch for about 3.5 years. At some point, i switched to unstable with the &lt;a href="http://news.siduction.org/"&gt;Siduction&lt;/a&gt; distro, which is by the way a great choice, and in general you have to be more careful with your upgrades, be careful with upgrading packages, be &lt;strong&gt;more&lt;/strong&gt; careful with dist-upgrading packages, &lt;strong&gt;holding&lt;/strong&gt; packages -patience is a virtue in unstable-, reading changelogs and eventually downgrading packages.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/dimr/debsnapshot-cli"&gt;debsnap-cli&lt;/a&gt; gives you this extra functionality that extends the available package versions that you can install.
-I personally use it a lot :). The last time i used it was when the &lt;a href="https://igurublog.wordpress.com/2016/04/20/heads-up-gtk-3-20-off-to-a-troubled-start/"&gt;gtk 3.20 entered the unstable branch &lt;/a&gt; and messed up some programs (pavucontrol, file-roller, kazam, gedit) including firefox.&lt;/p&gt;
-&lt;p&gt;I just queried the snapshot server for firefox with&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;debsnap-cli -first-seen -arch amd64 45.0.2-1  firefox&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;it found the relevant timestamp, created the url and appended to a snapshot.list file that it creates inside the /etc/apt/sources.list.d/ path&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;http://snapshot.debian.org/archive/debian/20160413T160058Z&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;see the full documentation on the github page for instructions on how to use it.&lt;/p&gt;
-&lt;!-- Final note. Building packages in python should be easier, there are way to many resources on line that can give you a clue on how to  --&gt;
-
-&lt;!-- start but in the end you are going to spend a lot of time in a   --&gt;</summary><category term="debian"></category><category term="linux"></category><category term="debsnapshot"></category><category term="python"></category></entry><entry><title>Experimenting with maps in R</title><link href="/maps-with-r.html" rel="alternate"></link><published>2016-04-07T04:47:56+03:00</published><author><name>dimitris</name></author><id>tag:,2016-04-07:maps-with-r.html</id><summary type="html">&lt;p&gt;I guess you all know &lt;a href="http://processing.org/"&gt;Processing&lt;/a&gt; and what it can do. Recently i came across with the &lt;a href="http://benfry.com/phd/"&gt;phd thesis&lt;/a&gt; of one of its creators and i saw this picture on page 34, “Psychology of Pereception” chapter.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>dmtrs</title><link href="/" rel="alternate"></link><link href="/feeds/post.atom.xml" rel="self"></link><id>/</id><updated>2016-04-07T04:47:56+03:00</updated><entry><title>Experimenting with maps in R</title><link href="/maps-with-r.html" rel="alternate"></link><published>2016-04-07T04:47:56+03:00</published><author><name>dimitris</name></author><id>tag:,2016-04-07:maps-with-r.html</id><summary type="html">&lt;p&gt;I guess you all know &lt;a href="http://processing.org/"&gt;Processing&lt;/a&gt; and what it can do. Recently i came across with the &lt;a href="http://benfry.com/phd/"&gt;phd thesis&lt;/a&gt; of one of its creators and i saw this picture on page 34, “Psychology of Pereception” chapter.&lt;/p&gt;
 &lt;p&gt;&lt;img alt="france" src="/images/france.jpg" /&gt;&lt;/p&gt;
 &lt;p&gt;combined with these words:&lt;/p&gt;
 &lt;blockquote&gt;
