@@ -5,28 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/</loc>
-<lastmod>2016-06-28T19:55:07-00:00</lastmod>
+<lastmod>2016-06-28T19:57:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>/archives.html</loc>
-<lastmod>2016-06-28T19:55:07-00:00</lastmod>
+<lastmod>2016-06-28T19:57:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>/tags.html</loc>
-<lastmod>2016-06-28T19:55:07-00:00</lastmod>
+<lastmod>2016-06-28T19:57:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>/categories.html</loc>
-<lastmod>2016-06-28T19:55:07-00:00</lastmod>
+<lastmod>2016-06-28T19:57:01-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
@@ -36,6 +36,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <lastmod>2016-04-07T04:47:56+03:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
+</url>
+
+<url>
+<loc>/processing-with-mapzen.html</loc>
+<lastmod>2016-05-30T04:47:56+03:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>/debsnap-cli.html</loc>
+<lastmod>2016-05-18T04:47:56+03:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.6</priority>
 </url>
 
 <url>
@@ -54,28 +68,42 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/category/post.html</loc>
-<lastmod>2016-04-07T04:47:56+01:35</lastmod>
+<lastmod>2016-05-30T04:47:56+01:35</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>/tag/debsnapshot.html</loc>
+<lastmod>2016-05-18T04:47:56+01:35</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>/tag/java.html</loc>
-<lastmod>2016-04-07T04:47:56+01:35</lastmod>
+<lastmod>2016-05-30T04:47:56+01:35</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>/tag/python.html</loc>
-<lastmod>2016-04-07T04:47:56+01:35</lastmod>
+<lastmod>2016-05-18T04:47:56+01:35</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>/tag/processing.html</loc>
-<lastmod>2016-04-07T04:47:56+01:35</lastmod>
+<lastmod>2016-05-30T04:47:56+01:35</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>/tag/vector-tiles.html</loc>
+<lastmod>2016-05-30T04:47:56+01:35</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
@@ -102,8 +130,22 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>/tag/linux.html</loc>
+<lastmod>2016-05-18T04:47:56+01:35</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
 <loc>/tag/mapzen.html</loc>
-<lastmod>2016-04-07T04:47:56+01:35</lastmod>
+<lastmod>2016-05-30T04:47:56+01:35</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>/tag/debian.html</loc>
+<lastmod>2016-05-18T04:47:56+01:35</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
@@ -117,7 +159,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>/author/dimitris.html</loc>
-<lastmod>2016-04-07T04:47:56+01:35</lastmod>
+<lastmod>2016-05-30T04:47:56+01:35</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.6</priority>
 </url>
