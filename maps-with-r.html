@@ -19,7 +19,7 @@
 
 <meta name="author" content="dimitris" />
 <meta name="description" content="I guess you all know Processing and what it can do. Recently i came across with the phd thesis of one of its creators and i saw this picture on page 34, “Psychology of Pereception” chapter. combined with these words: Reading the left-hand image requires the viewer to search the ..." />
-<meta name="keywords" content="java, processing, maps, mapzen, vertor-tiles">
+<meta name="keywords" content="R, maps">
 <meta property="og:site_name" content="Dimitris Rongotis"/>
 <meta property="og:title" content="Experimenting with maps in R"/>
 <meta property="og:description" content="I guess you all know Processing and what it can do. Recently i came across with the phd thesis of one of its creators and i saw this picture on page 34, “Psychology of Pereception” chapter. combined with these words: Reading the left-hand image requires the viewer to search the ..."/>
@@ -29,33 +29,31 @@
 <meta property="article:published_time" content="2016-04-07 04:47:56+03:00"/>
 <meta property="article:modified_time" content=""/>
 <meta property="article:author" content="/author/dimitris.html">
-<meta property="article:section" content="post"/>
-<meta property="article:tag" content="java"/>
-<meta property="article:tag" content="processing"/>
+<meta property="article:section" content="posts"/>
+<meta property="article:tag" content="R"/>
 <meta property="article:tag" content="maps"/>
-<meta property="article:tag" content="mapzen"/>
-<meta property="article:tag" content="vertor-tiles"/>
-<meta property="og:image" content="">
+<meta property="og:image" content="http://localhost:8000/images/profile/mypic.png">
   <title>Dimitris Rongotis &ndash; Experimenting with maps in R</title>
 </head>
 <body>
   <aside>
     <div>
       <a href="">
-        <img src="/theme/img/profile.png" alt="Dimitris Rongotis" title="Dimitris Rongotis">
+        <img src="http://localhost:8000/images/profile/mypic.png" alt="Dimitris Rongotis" title="Dimitris Rongotis">
       </a>
       <h1><a href="">Dimitris Rongotis</a></h1>
-      <p>Programming and Stuff</p>
+      <p>Programming stuff, notes and thoughts</p>
       <nav>
         <ul class="list">
           <li><a href="/pages/about.html#about">About</a></li>
-          <li><a href="www.in.gr" target="_blank">posts</a></li>
         </ul>
       </nav>
       <ul class="social">
         <li><a class="sc-github" href="https://github.com/dimr" target="_blank"><i class="fa fa-github"></i></a></li>
         <li><a class="sc-twitter" href="https://twitter.com/dim__r" target="_blank"><i class="fa fa-twitter"></i></a></li>
         <li><a class="sc-rss" href="/feeds/all.atom.xml" target="_blank"><i class="fa fa-rss"></i></a></li>
+        <li><a class="sc-envelope-o" href="mailto:dimitris.rongotis@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a></li>
+        <li><a class="sc-vimeo" href="http://www.vimeo.com" target="_blank"><i class="fa fa-vimeo"></i></a></li>
       </ul>
     </div>
   </aside>
@@ -63,17 +61,18 @@
     <nav>
       <a href="">Home</a>
       <a href="/archives.html">Archives</a>
+      <a href="/tags.html">Tags</a>
       <a href="/feeds/all.atom.xml">Atom</a>
     </nav>
 
 <article>
   <header>
     <h1 id="maps-with-r">Experimenting with maps in R</h1>
-    <p>Posted on Thu 07 April 2016 in <a href="/category/post.html">post</a></p>
+    <p>Posted on Thu 07 Apr 2016 in <a href="/category/posts.html">posts</a></p>
   </header>
   <div>
     <p>I guess you all know <a href="http://processing.org/">Processing</a> and what it can do. Recently i came across with the <a href="http://benfry.com/phd/">phd thesis</a> of one of its creators and i saw this picture on page 34, “Psychology of Pereception” chapter.</p>
-<p><img alt="france" src="/images/france.jpg" /></p>
+<p><img alt="france" src="/images/mapsR/france.jpg" /></p>
 <p>combined with these words:</p>
 <blockquote>
 <p>Reading the left-hand image requires the viewer to search the image for the lowest and highest values, and the short-term memorization of the general layout of the numbers. On the right, a qualitative &gt; &gt; understanding of the image is immediately conveyed—that something is important in the Northwest corner, and to a lesser extent in a small region on the
@@ -81,9 +80,9 @@ Eastern edge. This information is conveyed without any active viewing, meaning t
 </blockquote>
 <p>Very interesting but how do i do something like this? First step just find some data and experiment. At first i wanted to try with processing but then i thought that R might be more appropriate since i can handle shapefiles (.shp) easier with R rather in Java. I do not know how this map was created or which is the correct way to do it so i had to figure something out. Morever, i wanted to experiment with an area that i am familiar with, so i went for these two datasets, Polygons and Points that are available for free (this is a small area from Thessaloniki,Greece). I used the shp format.</p>
 <p>Just plotting these two together with the <a href="https://cran.r-project.org/web/packages/maptools/index.html">maptools</a> library you get something like this</p>
-<p><img alt="ok" src="/images/first.png" /></p>
+<p><img alt="ok" src="/images/mapsR/first.png" /></p>
 <p>and if i zoom in</p>
-<p><img alt="zoomed" src="/images/firstzoomed.png" /></p>
+<p><img alt="zoomed" src="/images/mapsR/firstzoomed.png" /></p>
 <p>that looks great! Exactly what i wanted. The polygons are the building and the red dots indicate how may entrances the buildings have, let`s say they are large building blocks with adjacent buildings building and more dots mean that more people live there. So i will try to visualize this.</p>
 <p>My first thought was:”Just fill this plot with dots (create a grid) and then if any of these dots are inside the polygons,plot them.”</p>
 <p>So i create the grid and plot it over the polygons while leaving the Points shapefile out just for now</p>
@@ -114,7 +113,7 @@ final.grid<span class="o">&lt;-</span><span class="p">(</span><span class="kp">e
 </td></tr></table>
 
 <p>i know, really bad names but you get the point.</p>
-<p><img alt="firstwithgrid" src="/images/firstwithgrid.png" /></p>
+<p><img alt="firstwithgrid" src="/images/mapsR/firstwithgrid.png" /></p>
 <p>Next keep only the points that are inside any polygon. This one is a bit tricky since SpatialDataFrame does not allow you to create a new column, so i copy it to apply the over() function and create the new column to the original final.grid data frame.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -194,11 +193,8 @@ where inserted to <a href="https://inkscape.org/en/">inkscape</a> to create the 
   </div>
   <div class="tag-cloud">
     <p>
-      <a href="/tag/java.html">java</a>
-      <a href="/tag/processing.html">processing</a>
+      <a href="/tag/r.html">R</a>
       <a href="/tag/maps.html">maps</a>
-      <a href="/tag/mapzen.html">mapzen</a>
-      <a href="/tag/vertor-tiles.html">vertor-tiles</a>
     </p>
   </div>
 <div id="disqus_thread"></div>
@@ -248,7 +244,7 @@ where inserted to <a href="https://inkscape.org/en/">inkscape</a> to create the 
     "name": "dimitris",
     "url": "/author/dimitris.html"
   },
-  "image": "{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/profile.png",
+  "image": "http://localhost:8000/images/profile/mypic.png",
   "url": "/maps-with-r.html",
   "description": "I guess you all know Processing and what it can do. Recently i came across with the phd thesis of one of its creators and i saw this picture on page 34, “Psychology of Pereception” chapter. combined with these words: Reading the left-hand image requires the viewer to search the ..."
 }
